@@ -34,7 +34,14 @@ function twoSum1(nums, target) {
     }
     return [];
 }
+/*
+    Time Complexity - O(n)
+    Space Complexity - O(n)
 
+    * @param {number[]} nums
+    * @param {number} target
+    * @return {number[]}
+*/
 function twoSum2(nums, target) {
     const map = new Map();
     let diff = 0;
