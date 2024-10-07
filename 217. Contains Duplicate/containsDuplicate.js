@@ -13,7 +13,7 @@ module.exports = {
 function containsDuplicate(nums) {
     /*
     
-    Time Complexity - O(n^2) ** Stack Implementation
+    Time Complexity - O(n^2) ** List Implementation
     Space Complexity - O(n)
 
     * @param {String || array [] } 
