@@ -51,7 +51,7 @@ function optimizedTwoSum(nums, target) {
     for (const item in nums) {
         diff = target - nums[item];
         if (map.has(diff)) {
-            return [map.get(diff), item]
+            return [Number(map.get(diff)), Number(item)]
         }
         map.set(nums[item], item);
     }
