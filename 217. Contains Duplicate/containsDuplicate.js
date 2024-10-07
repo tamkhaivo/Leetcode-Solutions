@@ -20,7 +20,7 @@ function containsDuplicate(nums) {
     * @return {Boolean}
     */
     let seen = [];
-    for (num of nums) {
+    for (const num of nums) {
         if (num in seen) return true;
         seen.push(num);
     }
@@ -36,9 +36,9 @@ function optimizedContainsDuplicate(nums) {
     */
     
     let set = new Set();
-    for (nums of nums) {
+    for (const nums of nums) {
         if (set.has(num)) return true;
-        set.add(nums);
+        set.add(num);
     }
     return false; 
 }
