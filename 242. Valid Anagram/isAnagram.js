@@ -25,8 +25,8 @@ function isAnagram(s, t) {
     * @return {Boolean}
     */
         
-    const sortedS = s.toLowerCase().split("").sort().join("").trimEnd()
-    const sortedT = t.toLowerCase().split("").sort().join("").trimEnd()
+    const sortedS = s.toLowerCase().split("").sort().join("").trimStart()
+    const sortedT = t.toLowerCase().split("").sort().join("").trimStart()
 
     return sortedS == sortedT;
 
