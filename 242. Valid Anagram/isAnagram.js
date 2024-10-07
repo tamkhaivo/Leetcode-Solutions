@@ -39,6 +39,7 @@ function optimizedIsAnagram(s, t) {
     let sMap = new Map();
 
     for (const sL of s) {
+    for (const sL of s) {
         let char = sL.toLowerCase();
         if (char == " ") continue;
 
@@ -48,6 +49,7 @@ function optimizedIsAnagram(s, t) {
         sMap.set(char, sMap.get(char) + 1);
     }
 
+    for (const sT of t) {
     for (const sT of t) {
         let char = sT.toLowerCase();
         if (char == " ") continue;
