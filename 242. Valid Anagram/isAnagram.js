@@ -5,14 +5,9 @@ module.exports = {
 /*
     Given two strings s and t, return true if t is an anagram of s, and false otherwise.
 
-    Needs Update:
-        Add Multiword Anagrams
-
     Constraints:
-        2 <= nums.length <= 10^4
-        -10^9 <= nums[i] <= 10^9
-        -10^9 <= target <= 10^9
-        Only one valid answer exists.
+       1 <= s.length, t.length <= 5 * 104
+
     
 */
 function isAnagram(s, t) {
