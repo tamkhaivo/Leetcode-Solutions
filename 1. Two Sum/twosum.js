@@ -18,7 +18,6 @@
     * @param {number} target
     * @return {number[]}
 */
-
 function twoSum(nums, target) {
     for (let x = 0; x < nums.length; x++) {
         for (let y = x + 1; y < nums.length; y++){
