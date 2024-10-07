@@ -38,8 +38,12 @@ test('Unoptimized: Ultimate vs Mutilate - expects true', () => {
     let res = isAnagram.isAnagram(s1, s2);
     expect(res).toBe(true);
 });
-
-
+test('Unoptimized: William Shakespeare vs I am a weakish speller - expects true', () => {
+    let s1 = "William Shakespeare";
+    let s2 = "I am a weakish speller";
+    let res = isAnagram.isAnagram(s1, s2);
+    expect(res).toBe(true);
+});
 
 
 test('Optimzied:   ultimate vs mutilate - expects true', () => {
@@ -76,6 +80,12 @@ test('Optimzied:   ab vs ass - expects false', () => {
 test('Optimzied:   Ultimate vs Mutilate - expects true', () => {
     let s1 = "Ultimate";
     let s2 = "Mutilate";
+    let res = isAnagram.optimizedIsAnagram(s1, s2);
+    expect(res).toBe(true);
+});
+test('Optimzied:   William Shakespeare vs I am a weakish speller - expects true', () => {
+    let s1 = "William Shakespeare";
+    let s2 = "I am a weakish speller";
     let res = isAnagram.optimizedIsAnagram(s1, s2);
     expect(res).toBe(true);
 });

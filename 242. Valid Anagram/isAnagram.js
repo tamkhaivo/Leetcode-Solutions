@@ -24,11 +24,9 @@ function isAnagram(s, t) {
     * @param {String} t
     * @return {Boolean}
     */
-    
-    if(s.length !== t.length) return false
-    
-    const sortedS = s.toLowerCase().split("").sort().join("")
-    const sortedT = t.toLowerCase().split("").sort().join("")
+        
+    const sortedS = s.toLowerCase().split("").sort().join("").trimEnd()
+    const sortedT = t.toLowerCase().split("").sort().join("").trimEnd()
 
     return sortedS == sortedT;
 
@@ -42,12 +40,13 @@ function optimizedIsAnagram(s, t) {
     * @param {String} t
     * @return {Boolean}
     */
-    if(s.length != t.length) return false;
-
+    
     let sMap = new Map();
 
     for (sL of s) {
         let char = sL.toLowerCase();
+        if (char == " ") continue;
+
         if(!sMap.has(char)){
             sMap.set(char, 0);
         }
@@ -56,6 +55,7 @@ function optimizedIsAnagram(s, t) {
 
     for (sT of t) {
         let char = sT.toLowerCase();
+        if (char == " ") continue;
 
         if(!sMap.has(char) || sMap.get(char) == 0){
             return false;
