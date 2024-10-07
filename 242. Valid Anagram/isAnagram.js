@@ -5,7 +5,7 @@ module.exports = {
 /*
     Given two strings s and t, return true if t is an anagram of s, and false otherwise.
 
-    Needs Update: 
+    Needs Update:
         Add Multiword Anagrams
 
     Constraints:
@@ -27,8 +27,8 @@ function isAnagram(s, t) {
     
     if(s.length !== t.length) return false
     
-    const sortedS = s.split("").sort().join("")
-    const sortedT = t.split("").sort().join("")
+    const sortedS = s.toLowerCase().split("").sort().join("")
+    const sortedT = t.toLowerCase().split("").sort().join("")
 
     return sortedS == sortedT;
 
@@ -46,18 +46,21 @@ function optimizedIsAnagram(s, t) {
 
     let sMap = new Map();
 
-    for(sL of s){
-        if(!sMap.has(sL)){
-            sMap.set(sL, 0);
+    for (sL of s) {
+        let char = sL.toLowerCase();
+        if(!sMap.has(char)){
+            sMap.set(char, 0);
         }
-        sMap.set(sL, sMap.get(sL) + 1);
+        sMap.set(char, sMap.get(char) + 1);
     }
 
-    for(sT of t){
-        if(!sMap.has(sT) || sMap.get(sT) == 0){
+    for (sT of t) {
+        let char = sT.toLowerCase();
+
+        if(!sMap.has(char) || sMap.get(char) == 0){
             return false;
         }            
-        sMap.set(sT, sMap.get(sT) - 1)
+        sMap.set(char, sMap.get(char) - 1)
     }
     return true;
 }
