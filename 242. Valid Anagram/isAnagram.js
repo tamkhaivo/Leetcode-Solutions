@@ -57,5 +57,8 @@ function optimizedIsAnagram(s, t) {
         }            
         sMap.set(char, sMap.get(char) - 1)
     }
+    for (val of sMap.values()) {
+        if (val != 0) return false;
+    }
     return true;
 }

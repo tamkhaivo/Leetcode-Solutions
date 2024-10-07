@@ -89,3 +89,9 @@ test('Optimzied:   William Shakespeare vs I am a weakish speller - expects true'
     let res = isAnagram.optimizedIsAnagram(s1, s2);
     expect(res).toBe(true);
 });
+test('Optimzied:   xx vs x - expects false', () => {
+    let s1 = "xx";
+    let s2 = "x";
+    let res = isAnagram.optimizedIsAnagram(s1, s2);
+    expect(res).toBe(false);
+});
