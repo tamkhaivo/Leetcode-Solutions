@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1728335208328" clover="3.2.0">
-  <project timestamp="1728335208328" name="All files">
+<coverage generated="1728335306515" clover="3.2.0">
+  <project timestamp="1728335306515" name="All files">
     <metrics statements="122" coveredstatements="122" conditionals="29" coveredconditionals="29" methods="4" coveredmethods="4" elements="155" coveredelements="155" complexity="0" loc="122" ncloc="122" packages="2" files="2" classes="2"/>
     <package name="1. Two Sum">
       <metrics statements="59" coveredstatements="59" conditionals="15" coveredconditionals="15" methods="2" coveredmethods="2"/>
@@ -67,9 +67,9 @@
         <line num="59" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="2. isAnagram">
+    <package name="242. Valid Anagram">
       <metrics statements="63" coveredstatements="63" conditionals="14" coveredconditionals="14" methods="2" coveredmethods="2"/>
-      <file name="isAnagram.js" path="/Users/tvo/Documents/Competitive Coding/leetcodeProblems/2. isAnagram/isAnagram.js">
+      <file name="isAnagram.js" path="/Users/tvo/Documents/Competitive Coding/leetcodeProblems/242. Valid Anagram/isAnagram.js">
         <metrics statements="63" coveredstatements="63" conditionals="14" coveredconditionals="14" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
