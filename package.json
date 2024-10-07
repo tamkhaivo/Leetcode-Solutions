@@ -1,5 +1,6 @@
 {
   "scripts": {
-    "test": "jest --verbose"
+    "test": "jest",
+    "testing": "jest --verbose"
   }
 }
