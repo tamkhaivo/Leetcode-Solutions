@@ -9,7 +9,7 @@ const config = {
   // automock: false,
 
   // Stop running tests after `n` failures
-  // bail: 0,
+  bail: 0,
 
   // The directory where Jest should store its cached dependency information
   // cacheDirectory: "/private/var/folders/x0/dd1k8z7n1vv3hz8l45gqyk9w0000gn/T/jest_dx",
