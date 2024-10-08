@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1728344694611" clover="3.2.0">
-  <project timestamp="1728344694611" name="All files">
-    <metrics statements="226" coveredstatements="226" conditionals="51" coveredconditionals="51" methods="8" coveredmethods="8" elements="285" coveredelements="285" complexity="0" loc="226" ncloc="226" packages="4" files="4" classes="4"/>
+<coverage generated="1728347143592" clover="3.2.0">
+  <project timestamp="1728347143592" name="All files">
+    <metrics statements="282" coveredstatements="259" conditionals="51" coveredconditionals="50" methods="12" coveredmethods="11" elements="345" coveredelements="320" complexity="0" loc="282" ncloc="282" packages="5" files="5" classes="5"/>
     <package name="1. Two Sum">
       <metrics statements="59" coveredstatements="59" conditionals="15" coveredconditionals="15" methods="2" coveredmethods="2"/>
       <file name="twosum.js" path="/Users/tvo/Documents/Competitive Coding/leetcodeProblems/1. Two Sum/twosum.js">
@@ -68,9 +68,9 @@
       </file>
     </package>
     <package name="217. Contains Duplicate">
-      <metrics statements="44" coveredstatements="44" conditionals="10" coveredconditionals="10" methods="2" coveredmethods="2"/>
+      <metrics statements="44" coveredstatements="39" conditionals="7" coveredconditionals="6" methods="2" coveredmethods="2"/>
       <file name="containsDuplicate.js" path="/Users/tvo/Documents/Competitive Coding/leetcodeProblems/217. Contains Duplicate/containsDuplicate.js">
-        <metrics statements="44" coveredstatements="44" conditionals="10" coveredconditionals="10" methods="2" coveredmethods="2"/>
+        <metrics statements="44" coveredstatements="39" conditionals="7" coveredconditionals="6" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -109,12 +109,12 @@
         <line num="36" count="2" type="stmt"/>
         <line num="37" count="2" type="stmt"/>
         <line num="38" count="2" type="stmt"/>
-        <line num="39" count="2" type="cond" truecount="1" falsecount="0"/>
-        <line num="40" count="7" type="cond" truecount="2" falsecount="0"/>
-        <line num="41" count="6" type="stmt"/>
-        <line num="42" count="6" type="cond" truecount="1" falsecount="0"/>
-        <line num="43" count="1" type="stmt"/>
-        <line num="44" count="1" type="stmt"/>
+        <line num="39" count="2" type="cond" truecount="0" falsecount="1"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
       </file>
     </package>
     <package name="242. Valid Anagram">
@@ -188,9 +188,9 @@
         <line num="65" count="4" type="stmt"/>
       </file>
     </package>
-    <package name="242. Valid Anagram copy">
+    <package name="347. Top K Frequent Elements">
       <metrics statements="58" coveredstatements="58" conditionals="9" coveredconditionals="9" methods="2" coveredmethods="2"/>
-      <file name="topKFrequent.js" path="/Users/tvo/Documents/Competitive Coding/leetcodeProblems/242. Valid Anagram copy/topKFrequent.js">
+      <file name="topKFrequent.js" path="/Users/tvo/Documents/Competitive Coding/leetcodeProblems/347. Top K Frequent Elements/topKFrequent.js">
         <metrics statements="58" coveredstatements="58" conditionals="9" coveredconditionals="9" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -250,6 +250,68 @@
         <line num="56" count="3" type="cond" truecount="1" falsecount="0"/>
         <line num="57" count="3" type="stmt"/>
         <line num="58" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="535. Encode and Decode TinyURL">
+      <metrics statements="56" coveredstatements="38" conditionals="3" coveredconditionals="3" methods="4" coveredmethods="3"/>
+      <file name="encodeDecode.js" path="/Users/tvo/Documents/Competitive Coding/leetcodeProblems/535. Encode and Decode TinyURL/encodeDecode.js">
+        <metrics statements="56" coveredstatements="38" conditionals="3" coveredconditionals="3" methods="4" coveredmethods="3"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="33" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
       </file>
     </package>
   </project>
