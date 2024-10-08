@@ -2,15 +2,15 @@ const encodeDecode = require('./encodeDecode');
 
 // Unoptimized
 test('Unoptimized: problems/design-tinyurl - expects problems/design-tinyurl', () => {
-    let url = "https://leetcode.com/problems/design-tinyurl";
-    let res = encodeDecode.encodeDecode(url);
-    expect(res).toStrictEqual(url);
+    let urlTokens = ["neet","code","love","you"];
+    let res = encodeDecode.encodeDecode(urlTokens);
+    expect(res).toStrictEqual(urlTokens);
 });
 
 
 
 test('Unoptimized: problems/design-tinyurl - expects problems/design-tinyurl', () => {
-    let url = "https://leetcode.com/problems/design-tinyurl";
-    let res = encodeDecode.optimizedEncodeDecode(url);
-    expect(res).toStrictEqual(url);
+    let urlTokens = ["neet","code","love","you"];
+    let res = encodeDecode.optimizedEncodeDecode(urlTokens);
+    expect(res).toStrictEqual(urlTokens);
 });
