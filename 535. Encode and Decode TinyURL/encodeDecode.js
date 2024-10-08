@@ -36,7 +36,7 @@ function encodeDecode(longURL) {
     return decode(encode(longURL));
 }
 
-function optimizedEncodeDecode(shortURL) {
+function optimizedEncodeDecode(longURL) {
     /*
     Time Complexity -
     Space Complexity - 
