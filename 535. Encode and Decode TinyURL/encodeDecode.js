@@ -21,8 +21,8 @@ module.exports = {
 */
 function encodeDecode(longURL) {
     /*
-    Time Complexity - 
-    Space Complexity - 
+    Time Complexity - O(1) ahah
+    Space Complexity - O(1)
 
     * @param {string} longUrl
     * @return {string}
@@ -38,17 +38,36 @@ function encodeDecode(longURL) {
 
 function optimizedEncodeDecode(longURL) {
     /*
-    Time Complexity -
-    Space Complexity - 
+    Time Complexity - O(n)
+    Space Complexity - O(n)
 
     * @param {string} longUrl
     * @return {string}
     */
     let encode = (longURL) => {
-        return longURL;
+        let result = '';
+        for (let s of longURL) {
+            result += `${s.length}#${s}`;
+        }
+        return result;
+
     };
     let decode = (shortURL) => {
-        return shortURL;
+        let result = [];
+        let i = 0;
+        while (i < shortURL.length) {
+            let j = i;
+            while (shortURL[j] !== '#') {
+                j++;
+            }
+            let length = parseInt(shortURL.substring(i, j), 10);
+            i = j + 1;
+            j = i + length;
+            result.push(shortURL.substring(i, j));
+            i = j;
+        }
+        return result;
+
     }
 
     return decode(encode(longURL));
