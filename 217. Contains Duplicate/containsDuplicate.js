@@ -36,7 +36,7 @@ function optimizedContainsDuplicate(nums) {
     */
     
     let set = new Set();
-    for (const nums of nums) {
+    for (const num of nums) {
         if (set.has(num)) return true;
         set.add(num);
     }
