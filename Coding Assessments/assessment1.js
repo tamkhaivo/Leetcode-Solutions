@@ -1,6 +1,6 @@
 /*
     Given 2 Strings of Binary Respesntations of S and T, 
-    You can rearrange T such that S xor T is the maximum value you can get.
+    You can rearrange T such that S xor T is the maximum value you can get after you XOR s^t.
 
  */
 
