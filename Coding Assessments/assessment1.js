@@ -6,8 +6,6 @@
 
 function maxValueXOR(s, t) {
     // Write your code here
-    console.log(xOR("1","1"))
-
     let sZero = [];
     let tOneCount = 0;
     let newT = "0".repeat(s.length);
@@ -60,3 +58,9 @@ function xOR(str1, str2){
         return res;
 
 } 
+
+
+
+function optimizedMaxValueXOR(s, t) {
+    
+}
