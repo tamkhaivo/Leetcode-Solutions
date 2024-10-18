@@ -3,7 +3,10 @@
     You can rearrange T such that S xor T is the maximum value you can get after you XOR s^t.
 
  */
-
+module.exports = {
+  maxValueXOR: maxValueXOR,
+  optimizedMaxValueXOR: optimizedMaxValueXOR
+};
 function maxValueXOR(s, t) {
     // Write your code here
     let sZero = [];
@@ -40,10 +43,7 @@ function maxValueXOR(s, t) {
             break;
         }
     }
-
     return xOR(s, newT)
-
-
 }
 function replaceChar(str, ind, char){
     return str.slice(0, ind) + char + str.slice(ind + 1)
@@ -56,11 +56,26 @@ function xOR(str1, str2){
             res += (char1^char2).toString();
         }
         return res;
-
 } 
 
 
 
+
 function optimizedMaxValueXOR(s, t) {
-    
+    let sInt = parseInt(s,2)
+    let tInt = parseInt(t, 2)
+
+    let newT = tInt
+    let highestBit
+
+    for (let i in s.length) {
+        if (sInt & (1 << i) != 0) {
+            highestBit = newT & - newT
+            if (highestBit < (1 << i)) {
+                tInt ^= (1 << i) | highestBit
+            }
+        }
+    }
+    return (sInt ^ tInt).toString(2)
 }
+
