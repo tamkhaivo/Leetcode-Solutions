@@ -12,7 +12,8 @@ function maxValueXOR(s, t) {
     let sZero = [];
     let tOneCount = 0;
     let newT = "0".repeat(s.length);
-    // 
+
+    // Count Zeros from S and Ones from T
     for(let x = 0; x < s.length; x++){
         if(s[x] === '0'){
             sZero.push(x);
@@ -21,6 +22,7 @@ function maxValueXOR(s, t) {
             tOneCount++
         }
     }
+
     // fill zero spots from S 
     for(const ind of sZero){
         if(tOneCount > 0){
@@ -60,22 +62,41 @@ function xOR(str1, str2){
 
 
 
-
-function optimizedMaxValueXOR(s, t) {
+// 32 Bit-limitation -- 
+function optimizedMaxValueXOR(s, t) { 
     let sInt = parseInt(s,2)
-    let tInt = parseInt(t, 2)
+    let tInt = parseInt(t,2)
 
-    let newT = tInt
-    let highestBit
+    let oneCount = 0;
+    let stack = [];
 
-    for (let i in s.length) {
-        if (sInt & (1 << i) != 0) {
-            highestBit = newT & - newT
-            if (highestBit < (1 << i)) {
-                tInt ^= (1 << i) | highestBit
-            }
-        }
+    let newT = 0;
+    
+    // Iterate from LSB to HSB 
+    for (let index = 0; index < t.length; index++) {
+        if (tInt & (1 << index)) // Check for 1s in t
+            oneCount++
+        if (~sInt & (1 << index)) // Check for 0s in s
+            stack.push(index);
     }
-    return (sInt ^ tInt).toString(2)
+
+    
+    while (stack.length > 0) {
+        if ((oneCount <= 0)) break;
+        newT = newT | (1 << stack.pop())
+        oneCount--;
+    }
+    
+    for (let index = 0; oneCount > 0; index++){
+        if (newT & (1 << index)) continue;
+        newT = newT | (1 << index)
+        oneCount--;
+    }
+
+    return (sInt ^ newT).toString(2)
 }
+
+
+
+
 
