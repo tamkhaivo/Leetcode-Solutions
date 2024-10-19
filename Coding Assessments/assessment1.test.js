@@ -63,7 +63,7 @@ test('Optimized: s = "10010010" t = "11100000" target = "11111010', () => {
     let s = "10010010"
     let t = "11100000"
     let target = "11111010";
-    let res = assessment1.optimizedMaxValueXOR(s,t);
+    let res = assessment1.binary32BitMaxValueXOR(s,t);
     expect(res).toBe(target);
 });
 
@@ -71,7 +71,7 @@ test('Optimized: s = "0000" t = "1111" target = "0000', () => {
     let s       = "0000"
     let t       = "1111"
     let target  = "1111";
-    let res = assessment1.optimizedMaxValueXOR(s,t);
+    let res = assessment1.binary32BitMaxValueXOR(s,t);
     expect(res).toBe(target);
 });
 
@@ -80,6 +80,15 @@ test('Optimized: s = "1011010101..." t = "1011010101..." target = "111111111...'
     let s       = "1011010101010101010101010111011"
     let t       = "1011010101010101010101010111011"
     let target  = "1111111111111111111111111000100";
-    let res = assessment1.optimizedMaxValueXOR(s,t);
+    let res = assessment1.binary32BitMaxValueXOR(s,t);
+    expect(res).toBe(target);
+});
+
+
+test('Optimized: s = "1011010101..." t = "1011010101..." target = "111111111...', () => {
+    let s       = "000011111"
+    let t       = "111110000"
+    let target  = "111111110";
+    let res = assessment1.binary32BitMaxValueXOR(s,t);
     expect(res).toBe(target);
 });

@@ -4,9 +4,11 @@
 
  */
 module.exports = {
-  maxValueXOR: maxValueXOR,
-  optimizedMaxValueXOR: optimizedMaxValueXOR
+    maxValueXOR: maxValueXOR,
+    optimizedMaxValueXOR: optimizedMaxValueXOR,
+    binary32BitMaxValueXOR: binary32BitMaxValueXOR
 };
+
 function maxValueXOR(s, t) {
     // Write your code here
     let sZero = [];
@@ -62,8 +64,13 @@ function xOR(str1, str2){
 
 
 
-// 32 Bit-limitation -- 
-function optimizedMaxValueXOR(s, t) { 
+function optimizedMaxValueXOR(s, t) {
+    
+}
+
+
+// 32 Bit-limitation aka 1 signed bit + 31 bit  == String Length cannot be >31 
+function binary32BitMaxValueXOR(s, t) { 
     let sInt = parseInt(s,2)
     let tInt = parseInt(t,2)
 
