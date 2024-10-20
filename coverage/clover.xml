@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1729452453707" clover="3.2.0">
-  <project timestamp="1729452453707" name="All files">
-    <metrics statements="491" coveredstatements="486" conditionals="105" coveredconditionals="104" methods="22" coveredmethods="21" elements="618" coveredelements="611" complexity="0" loc="491" ncloc="491" packages="7" files="7" classes="7"/>
+<coverage generated="1729452861906" clover="3.2.0">
+  <project timestamp="1729452861906" name="All files">
+    <metrics statements="491" coveredstatements="488" conditionals="110" coveredconditionals="110" methods="22" coveredmethods="21" elements="623" coveredelements="619" complexity="0" loc="491" ncloc="491" packages="7" files="7" classes="7"/>
     <package name="1. Two Sum">
       <metrics statements="59" coveredstatements="59" conditionals="17" coveredconditionals="17" methods="3" coveredmethods="3"/>
       <file name="twosum.js" path="/Users/tvo/Documents/Competitive Coding/leetcodeProblems/1. Two Sum/twosum.js">
@@ -423,9 +423,9 @@
       </file>
     </package>
     <package name="Coding Assessments">
-      <metrics statements="107" coveredstatements="102" conditionals="25" coveredconditionals="24" methods="5" coveredmethods="4"/>
+      <metrics statements="107" coveredstatements="104" conditionals="30" coveredconditionals="30" methods="5" coveredmethods="4"/>
       <file name="assessment1.js" path="/Users/tvo/Documents/Competitive Coding/leetcodeProblems/Coding Assessments/assessment1.js">
-        <metrics statements="107" coveredstatements="102" conditionals="25" coveredconditionals="24" methods="5" coveredmethods="4"/>
+        <metrics statements="107" coveredstatements="104" conditionals="30" coveredconditionals="30" methods="5" coveredmethods="4"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -498,10 +498,10 @@
         <line num="70" count="1" type="stmt"/>
         <line num="71" count="1" type="stmt"/>
         <line num="72" count="1" type="stmt"/>
-        <line num="73" count="4" type="cond" truecount="1" falsecount="0"/>
-        <line num="74" count="4" type="cond" truecount="0" falsecount="1"/>
-        <line num="75" count="0" type="stmt"/>
-        <line num="76" count="0" type="stmt"/>
+        <line num="73" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="74" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="75" count="1" type="stmt"/>
+        <line num="76" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="77" count="4" type="stmt"/>
         <line num="78" count="4" type="stmt"/>
         <line num="79" count="4" type="stmt"/>
@@ -511,25 +511,25 @@
         <line num="83" count="4" type="stmt"/>
         <line num="84" count="4" type="stmt"/>
         <line num="85" count="4" type="stmt"/>
-        <line num="86" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="86" count="5" type="cond" truecount="1" falsecount="0"/>
         <line num="87" count="52" type="stmt"/>
         <line num="88" count="52" type="cond" truecount="1" falsecount="0"/>
         <line num="89" count="52" type="stmt"/>
         <line num="90" count="52" type="cond" truecount="1" falsecount="0"/>
-        <line num="91" count="52" type="stmt"/>
+        <line num="91" count="52" type="cond" truecount="1" falsecount="0"/>
         <line num="92" count="4" type="stmt"/>
         <line num="93" count="4" type="stmt"/>
-        <line num="94" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="94" count="5" type="cond" truecount="1" falsecount="0"/>
         <line num="95" count="25" type="cond" truecount="2" falsecount="0"/>
         <line num="96" count="24" type="stmt"/>
         <line num="97" count="24" type="stmt"/>
-        <line num="98" count="24" type="stmt"/>
+        <line num="98" count="24" type="cond" truecount="1" falsecount="0"/>
         <line num="99" count="4" type="stmt"/>
-        <line num="100" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="100" count="5" type="cond" truecount="1" falsecount="0"/>
         <line num="101" count="7" type="cond" truecount="2" falsecount="0"/>
         <line num="102" count="6" type="stmt"/>
         <line num="103" count="6" type="stmt"/>
-        <line num="104" count="6" type="stmt"/>
+        <line num="104" count="6" type="cond" truecount="1" falsecount="0"/>
         <line num="105" count="4" type="stmt"/>
         <line num="106" count="4" type="stmt"/>
         <line num="107" count="4" type="stmt"/>

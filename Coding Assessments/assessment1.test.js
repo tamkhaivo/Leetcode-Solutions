@@ -92,3 +92,10 @@ test('32BitOptimized: s = "1011010101..." t = "1011010101..." target = "11111111
     let res = assessment1.binary32BitMaxValueXOR(s,t);
     expect(res).toBe(target);
 });
+
+test('32BitOptimized: s = "1011010101..." t = "1011010101..." target = "111111111...', () => {
+    let s       = "000011111000011111000011111000011111000011111000011111000011111000011111000011111000011111"
+    let t       = "000011111000011111000011111000011111000011111000011111000011111000011111000011111000011111"
+    let target = "Error: Exceeds 32BitOperation JS Limitation";
+    expect(() => assessment1.binary32BitMaxValueXOR(s,t)).toThrow(target);
+});
