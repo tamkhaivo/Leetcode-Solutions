@@ -16,22 +16,68 @@ module.exports = {
 */
 function isValid(s) {
     /*
-    Time Complexity - 
-    Space Complexity - 
+    Time Complexity - O(n)
+    Space Complexity - O(n)
 
     * @param {String} s
     * @return {boolean}
     */
     
+    if (s.length === 1) {
+        return false;
+    }
+    const bracketMap = {
+        '}' : '{',
+        ']' : '[',
+        ')' : '('
+    }
+    const stack = [];
+
+
+    for (let i = 0; i < s.length; i++) {
+        if (s[i] === '{' || s[i] === '[' || s[i] === '(') {
+            stack.push(s[i]);
+        }  else {
+            const topEle = stack.pop();
+            if (bracketMap[s[i]] !== topEle) {
+                return false;
+            }
+        }
+    }
+    return stack.length === 0;
+
+
+
+    
 }
 function optimizedIsValid(s) {
     /*
-    Time Complexity - 
-    Space Complexity - 
+    Time Complexity - O(n)
+    Space Complexity - O(n)
 
     * @param {String} s
     * @return {boolean}
     */
 
+    if(s.length & 1) return false;  
 
+    const stack = []; 
+    const beginningSet = new Set(['(','{','[']); 
+    const object = {
+        ")":"(",
+        "}":"{",
+        "]":"[",
+    } 
+    for(const char of s){
+        if(beginningSet.has(char)){
+            stack.push(char)
+            continue
+        }  
+        if(stack[stack.length-1] == object[char]){
+            stack.pop()
+            continue
+        }
+        return false;                  
+    }
+    return (stack.length == 0);
 }
