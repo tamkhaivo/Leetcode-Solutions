@@ -71,6 +71,9 @@ function optimizedMaxValueXOR(s, t) {
 
 // 32 Bit-limitation aka 1 signed bit + 31 bit  == String Length cannot be >31 
 function binary32BitMaxValueXOR(s, t) { 
+    if (s.length > 31 || t.length > 31) {
+        throw new Error("Error: Exceeds 32BitOperation JS Limitation");
+    }
     let sInt = parseInt(s,2)
     let tInt = parseInt(t,2)
 
