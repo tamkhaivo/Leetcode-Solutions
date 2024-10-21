@@ -10,7 +10,14 @@ module.exports = {
 };
 
 function maxValueXOR(s, t) {
-    // Write your code here
+    /*
+    Time Complexity - O(n^2) 
+    Space Complexity - O(n)
+
+    * @param {string, string} s, t 
+    * @return {string}
+    */
+   
     let sZero = [];
     let tOneCount = 0;
     let newT = "0".repeat(s.length);
@@ -65,6 +72,14 @@ function xOR(str1, str2){
 
 
 function optimizedMaxValueXOR(s, t) {
+    /*
+    Time Complexity - O(n) 
+    Space Complexity - O(n)
+
+    * @param {string, string} s, t 
+    * @return {string}
+    */
+   
     let sIntArr = s.split("").map((item) => parseInt(item));
     let tIntArr = t.split("").map((item) => parseInt(item));
     let newT = new Array(s.length).fill(0);
@@ -105,10 +120,16 @@ function optimizedMaxValueXOR(s, t) {
     
 
 }
-optimizedMaxValueXOR("10010010", "11100000");
 
 // 32 Bit-limitation aka 1 signed bit + 31 bit  == String Length cannot be >31 
 function binary32BitMaxValueXOR(s, t) { 
+    /*
+    Time Complexity - O(n) 
+    Space Complexity - O(n)
+
+    * @param {string, string} s, t 
+    * @return {string}
+    */
     if (s.length > 31 || t.length > 31) {
         throw new Error("Error: Exceeds 32BitOperation JS Limitation");
     }
