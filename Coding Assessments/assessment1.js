@@ -65,9 +65,47 @@ function xOR(str1, str2){
 
 
 function optimizedMaxValueXOR(s, t) {
-    
-}
+    let sIntArr = s.split("").map((item) => parseInt(item));
+    let tIntArr = t.split("").map((item) => parseInt(item));
+    let newT = new Array(s.length).fill(0);
+    let sZero = [];
+    let tOneCount = 0;
+    let maxValueXOR = [];
 
+    // Get Zero Indexes from s and Count Ones from t
+    for(let x = sIntArr.length - 1 ; x >= 0; x--){
+        if(~sIntArr[x] & 1){
+            sZero.push(x); //HSB on TOP
+        }
+        if(tIntArr[x] & 1){
+            tOneCount++
+        }
+    }
+
+    // Fill 1s to NewT in Zero Indexes from S (HSB to LSB)
+    while (sZero.length > 0) {
+        if (tOneCount <= 0) break;
+        newT[sZero.pop()] = 1
+        tOneCount--;
+    }
+    
+    // Fill Remaining 1s to NewT from the LSB to HSB
+    for (let index = newT.length - 1; tOneCount > 0; index--){
+        if (newT[index] & 1) continue;
+        newT[index] = 1
+        tOneCount--;
+    }
+    
+    // XOR Each Bit... Possible to break into 32 bit xor at one time instead of perBit?
+    for(let x = 0; x < sIntArr.length; x++){
+        maxValueXOR[x] = sIntArr[x] ^ newT[x];
+    }
+
+    return maxValueXOR.join("")
+    
+
+}
+optimizedMaxValueXOR("10010010", "11100000");
 
 // 32 Bit-limitation aka 1 signed bit + 31 bit  == String Length cannot be >31 
 function binary32BitMaxValueXOR(s, t) { 
@@ -90,13 +128,14 @@ function binary32BitMaxValueXOR(s, t) {
             stack.push(index);
     }
 
-    
+    // Fill Zero Indexes HSB to LSB
     while (stack.length > 0) {
         if ((oneCount <= 0)) break;
         newT = newT | (1 << stack.pop())
         oneCount--;
     }
     
+    // Fill Remaining Ones from LSB to HSB
     for (let index = 0; oneCount > 0; index++){
         if (newT & (1 << index)) continue;
         newT = newT | (1 << index)
