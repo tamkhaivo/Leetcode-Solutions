@@ -7,3 +7,13 @@ test('Unoptimized: servers = [1, 2, 1, 4, 5] t = ["Request", "Failure 1", "Failu
     let res = assessment2.loadBalancer(s,t);
     expect(res).toBe(target);
 });
+
+
+test('Unoptimized: servers = [1, 2, 1, 4, 5] t = ["Request", "Failure 1", "Failure 2", "Request", "Request"] target = 4', () => {
+    let s       = [1, 2, 1, 4, 5]
+    let t       = ["Request", "Failure 1", "Failure 2", "Request", "Request", "Request", "Request", "Request", "Request", "Request", "Failure 4", "Request"]
+    let target  = 4;
+    let res = assessment2.loadBalancer(s,t);
+    expect(res).toBe(target);
+});
+
