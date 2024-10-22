@@ -12,7 +12,7 @@ module.exports = {
 function maxValueXOR(s, t) {
     /*
     Time Complexity - O(n^2) 
-    Space Complexity - O(n)
+    Space Complexity - O(n^2)
 
     * @param {string, string} s, t 
     * @return {string}
