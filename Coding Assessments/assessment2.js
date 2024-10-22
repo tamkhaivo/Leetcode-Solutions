@@ -1,3 +1,9 @@
+module.exports = {
+    loadBalancer: loadBalancer,
+    optimizedLoadBalancer: optimizedLoadBalancer,
+};
+
+
 /*
     Given 2 lists create a load balancer that distributes request. 
 
@@ -14,3 +20,11 @@
 */
 
 
+
+
+function loadBalancer(servers, request) {
+    
+}
+function optimizedLoadBalancer(servers, request) {
+    
+}
