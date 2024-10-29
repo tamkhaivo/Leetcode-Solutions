@@ -13,5 +13,5 @@
 
 ## How to Use
 
-use `npm test` to run the tests
-use `npm testing` to run the tests in Verbose Mode
+- use `npm test` to run the tests
+- use `npm testing` to run the tests in Verbose Mode
