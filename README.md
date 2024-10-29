@@ -1,18 +1,10 @@
 # leetcodeProblems
 
-## Documentation
+## Why?
 
-### Leetcode Answers
-
-Keeping Historical Analysis
-
-### Leetcode Optimizations
-
-Continuous Improvements
-
-### Leetcode Problem Extensions
-
-Curious Problem Solving
+1. Keeping Historical Analysis
+2. Leetcode Optimizations & Continuous Improvements
+3. Curious Problem Solving
 
 ## Using Jest for Unit Testing
 
