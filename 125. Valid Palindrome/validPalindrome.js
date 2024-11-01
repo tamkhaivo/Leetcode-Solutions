@@ -3,30 +3,40 @@ module.exports = {
   optimizedIsValid: optimizedIsValid
 };
 /*
-    Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
-    You may assume that each input would have exactly one solution, and you may not use the same element twice.
-    You can return the answer in any order.
+    Given a string s, return true if it is a palindrome, otherwise return false.
+    A palindrome is a string that reads the same forward and backward. 
+    It is also case-insensitive and ignores all non-alphanumeric characters.
 
     Constraints:
-        2 <= nums.length <= 10^4
-        -10^9 <= nums[i] <= 10^9
-        -10^9 <= target <= 10^9
-        Only one valid answer exists.
-    
+        1 <= str.length <= 1000
+        str is accii 
 */
 function isValid(s) {
-    /*
-    Time Complexity 
-    Space Complexity 
+  /*
+  Time Complexity 
+  Space Complexity 
 
-    * @param {String} s
-    * @return {boolean}
-    */
-    
-    let head = 0;
-    let tail = s.length - 1;
-    
+  * @param {String} s
+  * @return {boolean}
+  */
+  
 
-    
+  let compS = s.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+  let head = 0;
+  let tail = compS.length - 1;
 
+  while (head < tail) {
+    if (compS[head] != compS[tail]) {
+      return false;
+    }
+    head++;
+    tail--;
+  }
+  return true;
+}
+
+
+function optimizedIsValid() {
+  
+  
 }
