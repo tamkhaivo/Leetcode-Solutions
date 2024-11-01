@@ -37,6 +37,5 @@ function isValid(s) {
 
 
 function optimizedIsValid() {
-  
-  
+  return true;
 }
