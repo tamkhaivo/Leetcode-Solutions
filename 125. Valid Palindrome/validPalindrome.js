@@ -34,8 +34,3 @@ function isValid(s) {
   }
   return true;
 }
-
-
-function optimizedIsValid() {
-  return true;
-}
