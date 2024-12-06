@@ -33,3 +33,28 @@ function substringPresent(videoComparisons, video1, video2) {
     
     
 }
+
+
+
+
+/*
+
+    int server [3, 1, 10];
+    int pipes  4
+
+
+    given int servers with capacity, find the top pipes permurtations
+    
+
+
+*/
+
+/*
+
+    Centers [1,2,3,4]
+    From [1,2,3]
+    To [5,6,7]
+    transfer =  [4,5,6,7]    
+
+
+*/
