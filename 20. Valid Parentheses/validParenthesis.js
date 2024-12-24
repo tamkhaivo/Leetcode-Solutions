@@ -32,8 +32,6 @@ function isValid(s) {
         ')' : '('
     }
     const stack = [];
-
-
     for (let i = 0; i < s.length; i++) {
         if (s[i] === '{' || s[i] === '[' || s[i] === '(') {
             stack.push(s[i]);
@@ -45,11 +43,10 @@ function isValid(s) {
         }
     }
     return stack.length === 0;
-
-
-
-    
 }
+
+  
+
 function optimizedIsValid(s) {
     /*
     Time Complexity - O(n)
