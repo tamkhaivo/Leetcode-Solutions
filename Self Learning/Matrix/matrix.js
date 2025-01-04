@@ -426,4 +426,61 @@ function execute() {
     return result;
   }
 }
+function submatrixSwap(matrix, coord_S1, coord_S2) {
+  let M = [
+    [1, 2, 3, 4, 5],
+    [6, 7, 8, 9, 10],
+    [11, 12, 13, 14, 15],
+    [16, 17, 18, 19, 20],
+    [21, 22, 23, 24, 25],
+  ];
 
+  let coordS1 = [0, 2, 2, 4];
+  let coordS2 = [2, 4, 0, 2];
+
+  const rows = matrix.length;
+  const cols = rows > 0 ? matrix[0].length : 0;
+  const result = [];
+  const traverse = [];
+  let row = 0;
+  let col = 0;
+  let [upperRow1, bottomRow1, leftCol1, rightCol1] = coord_S1;
+  let [upperRow2, bottomRow2, leftCol2, rightCol2] = coord_S2;
+  let rowMatrix = [];
+
+  while (traverse.length < rows * cols) {
+    traverse[traverse.length] = matrix[row][col];
+
+    if (
+      upperRow1 <= row &&
+      row <= bottomRow1 &&
+      leftCol1 <= col &&
+      col < rightCol1
+    ) {
+      rowMatrix.push(
+        matrix[row + (upperRow2 - upperRow1)][col + (leftCol2 - leftCol1)]
+      );
+    } else if (
+      upperRow2 <= row &&
+      row <= bottomRow2 &&
+      leftCol2 <= col &&
+      col < rightCol2
+    ) {
+      rowMatrix.push(
+        matrix[row - (upperRow2 - upperRow1)][col - (leftCol2 - leftCol1)]
+      );
+    } else {
+      rowMatrix.push(matrix[row][col]);
+    }
+    if (traverse.length % cols == 0) {
+      result.push(rowMatrix);
+      rowMatrix = [];
+    }
+    col++;
+    if (col % cols == 0) {
+      col = 0;
+      row++;
+    }
+  }
+  return result;
+}
