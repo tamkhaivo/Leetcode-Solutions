@@ -321,3 +321,109 @@ function traverseClockwiseSprialPath() {
   console.log(traverse);
   console.log(solution); //[1, 9, 10]
 }
+
+function interleaveMatrices() {
+  const matrixA = [
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12],
+  ];
+
+  const matrixB = [
+    [11, 12, 13],
+    [14, 15, 16],
+    [17, 18, 19],
+  ];
+
+  const submatrixCoords = [
+    [2, 3, 2, 3],
+    [1, 2, 1, 2],
+  ];
+
+  let rowAStart = submatrixCoords[0][0];
+  let rowAEnd = submatrixCoords[0][1];
+  let colAStart = submatrixCoords[0][2];
+  let colAEnd = submatrixCoords[0][3];
+
+  let rowBStart = submatrixCoords[1][0];
+  let rowBEnd = submatrixCoords[1][1];
+  let colBStart = submatrixCoords[1][2];
+  let colBEnd = submatrixCoords[1][3];
+
+  let row = rowAEnd - rowAStart + (rowBEnd - rowBStart);
+  let col = colAEnd - colAStart + 1 + (colBEnd - colBStart + 1);
+
+  let result = new Array(row).fill(null).map(() => new Array(col));
+
+  for (let row = 0; row < rowAEnd - rowAStart + 1; row++) {
+    for (let col = 0; col < colAEnd - colAStart + 1; col++) {
+      result[row][col * 2] = matrixA[row + rowAStart - 1][col + colAStart - 1];
+    }
+  }
+  for (let row = 0; row < rowBEnd - rowBStart + 1; row++) {
+    for (let col = 0; col < colBEnd - colBStart + 1; col++) {
+      result[row][col * 2 + 1] =
+        matrixB[row + rowBStart - 1][col + colBStart - 1];
+    }
+  }
+  console.log(result);
+  return result;
+}
+
+function execute() {
+  let matrixA = [
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12],
+    [13, 14, 15, 16],
+  ];
+
+  let matrixB = [
+    [17, 18, 19, 20],
+    [21, 22, 23, 24],
+    [25, 26, 27, 28],
+    [29, 30, 31, 32],
+  ];
+
+  let n = 2;
+  console.log(matrixBoundaryConcatenation(matrixA, matrixB, n));
+
+  function matrixBoundaryConcatenation(matrixA, matrixB, n) {
+    const result = [];
+
+    // Helper function to traverse the boundary of a single matrix
+    function traverseMatrixBoundary(matrix, layers) {
+      const rows = matrix.length;
+      const cols = matrix[0].length;
+      const boundaryValues = [];
+
+      for (let layer = 0; layer < layers; layer++) {
+        // Top row (left to right)
+        for (let col = layer; col < cols - layer; col++) {
+          boundaryValues.push(matrix[layer][col]);
+        }
+        // Right column (top to bottom)
+        for (let row = layer + 1; row < rows - layer; row++) {
+          boundaryValues.push(matrix[row][cols - layer - 1]);
+        }
+        // Bottom row (right to left)
+        for (let col = cols - layer - 2; col >= layer; col--) {
+          boundaryValues.push(matrix[rows - layer - 1][col]);
+        }
+        // Left column (bottom to top)
+        for (let row = rows - layer - 2; row > layer; row--) {
+          boundaryValues.push(matrix[row][layer]);
+        }
+      }
+
+      return boundaryValues;
+    }
+
+    // Traverse each matrix's boundary up to n layers
+    result.push(...traverseMatrixBoundary(matrixA, n));
+    result.push(...traverseMatrixBoundary(matrixB, n));
+
+    return result;
+  }
+}
+
