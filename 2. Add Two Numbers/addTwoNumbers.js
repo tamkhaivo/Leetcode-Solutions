@@ -70,3 +70,5 @@ function addTwoBinaryNumbers(l1, l2) {
     }
     return list.next;
 }
+
+console.log(addTwoNumbers())

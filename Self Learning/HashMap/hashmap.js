@@ -22,9 +22,13 @@ function countMap() {
       letterCount.set(l, (letterCount.get(l) || 0) + 1);
     }
   }
-  letterCount.forEach((value, key) => console.log(key + " : " + value));
-
   let sum = 0;
+  letterCount.forEach((value, key) => {
+    console.log(key + " : " + value);
+    sum += value;
+  });
+
+  sum = 0;
   for (const val of letterCount.values()) {
     sum += val;
   }
@@ -37,44 +41,45 @@ function countMap() {
 
 function parseLog() {
   let logs = "1 solve 50, 2 solve 60, 1 fail, 3 solve 40, 2 fail, 3 solve 70";
-  let studentLog = new Map();
-  let loggedAttempts = logs.split(", ");
-  let print = [];
-
-  for (const log of loggedAttempts) {
-    let info = log.split(" ");
-    let id = info[0];
-    let action = info[1];
-    let scored = Number(info[2] || 0);
-    let studentRecord = studentLog.get(id) || {
+  let studentMap = new Map();
+  let countOfFailedParsing = 0;
+  let result = [];
+  for (const log of logs.split(", ")) {
+    let [id, action, score] = log.split(" ");
+    let studentLog = studentMap.get(id) || {
       score: 0,
       successfulAttempts: 0,
       failedAttempts: 0,
     };
+
     if (action == "solve") {
-      studentLog.set(id, {
-        ...studentRecord,
-        score: studentRecord.score + scored,
-        successfulAttempts: studentRecord.successfulAttempts + 1,
+      studentMap.set(id, {
+        ...studentLog,
+        score: studentLog.score + Number(score),
+        successfulAttempts: studentLog.successfulAttempts + 1,
       });
-    } else {
-      studentLog.set(id, {
-        ...studentRecord,
-        failedAttempts: studentRecord.failedAttempts + 1,
-      });
+      continue;
     }
+    if(action == "fail") {
+      studentMap.set(id, {
+        ...studentLog,
+        failedAttempts: studentLog.failedAttempts + 1,
+      });
+      continue;
+    }
+    countOfFailedParsing++;
   }
-    
-  for (const [key, value] of studentLog.entries()) {
-    print.push([
-      key,
-      value.score,
-      value.successfulAttempts,
-      value.failedAttempts,
-    ]);
+
+  console.warn("Parse Fails : ".concat(countOfFailedParsing));
+  for (const [key, value] of studentMap.entries()) {
+    result.push({
+      id: key,
+      score: value.score,
+      successfulAttempts: value.successfulAttempts,
+      failedAttempts: value.failedAttempts,
+    })
   }
-    
-  print.sort((a, b) => b[1] - a[1]);
-  console.log(print);
+  result.sort((a,b)=> b.score - a.score) // scores in descending order
+  console.table(result)
 }
 parseLog();
