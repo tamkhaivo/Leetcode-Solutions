@@ -33,8 +33,7 @@ function topKFrequent(nums, k) {
     ret = Array.from(map.keys()).sort((a, b) => {
         return map.get(b) - map.get(a);
     });
-    ret = ret.slice(0, Math.min(ret.length, k));
-    return ret
+    return ret.slice(0, Math.min(ret.length, k))
 
 }
 function optimizedTopKFrequent(nums, k) {
@@ -51,7 +50,6 @@ function optimizedTopKFrequent(nums, k) {
     nums.forEach(num => {
         map.set(num, (map.get(num) || 0) + 1);
     });
-
     ret = Array.from(map.entries()).sort((a, b) => b[1] - a[1]);
     return ret.slice(0, Math.min(ret.length, k)).map(entry => entry[0]); // [[a,5], [b,3]] ==> [a, b] 
 
