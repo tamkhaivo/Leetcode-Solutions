@@ -1,6 +1,6 @@
 module.exports = {
   isValid: isValid,
-  optimizedIsValid: optimizedIsValid
+  //optimizedIsValid: optimizedIsValid
 };
 /*
     Given a string s, return true if it is a palindrome, otherwise return false.

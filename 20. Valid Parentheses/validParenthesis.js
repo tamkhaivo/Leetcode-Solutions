@@ -45,7 +45,7 @@ function isValid(s) {
     return stack.length === 0;
 }
 
-  
+
 
 function optimizedIsValid(s) {
     /*
@@ -55,26 +55,28 @@ function optimizedIsValid(s) {
     * @param {String} s
     * @return {boolean}
     */
+    
 
-    if(s.length & 1) return false;  
-
-    const stack = []; 
-    const beginningSet = new Set(['(','{','[']); 
-    const object = {
-        ")":"(",
-        "}":"{",
-        "]":"[",
-    } 
-    for(const char of s){
-        if(beginningSet.has(char)){
-            stack.push(char)
-            continue
-        }  
-        if(stack[stack.length-1] == object[char]){
-            stack.pop()
-            continue
-        }
-        return false;                  
+    if (s.length & 1) return false;
+    const beginningParenth = new Set(["(", "{", "["]);
+    const parenthesisPairs = {
+        ")": "(",
+        "}": "{",
+        "]":"["
     }
-    return (stack.length == 0);
+
+    const stack = [];
+    for (const char of s) {
+        if (beginningParenth.has(char)) {
+            stack.push(char)
+            continue;
+        }
+        if (stack.length > 0 && stack[stack.length - 1] === parenthesisPairs[char]) {
+            stack.pop()
+            continue;
+        } 
+        return false;
+
+    }
+    return (stack.length === 0);
 }
