@@ -20,16 +20,19 @@ var findRelativeRanks = function (score) {
         rank = "Bronze Medal";
         break;
       default:
-        rank += (i + 1);
+        rank += (i);
     }
     return rank;
   };
   for (let i = 0; i < score.length; i++) {
-    ranks.enqueue(i, score[i]);
+    ranks.enqueue(score[i]);
   }
   for (let i = 0; i < score.length; i++) {
-    const items = ranks.dequeue();  
-    answer[items.element] = rating(i);
+      const items = ranks.dequeue(); 
+      if(i < 3)
+          answer[i] = rating(i);
+      else 
+          answer[i] = items
   }
   return answer;
 };
